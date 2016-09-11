@@ -6,8 +6,15 @@
 <body>
 	<h1>Busqueda en profundidad</h1>
 	<h2>DFS (Deep first search)</h2>
-	
+	<form method = 'POST'>
+		 {% csrf_token %}
+		<table>
+			{{ form.as_table }}
+		</table>
+		<input type="submit" value="Iniciar">
+	</form>
 	<p>El algoritmo se detiene cuando encuentra el nodo con el tesoro</p>
 	<p>Ademas se muestra la informacion respecto a los nodos</p>
+	{{ text }}
 </body>
 </html>
