@@ -72,17 +72,19 @@ class Graph:
 			v = self._dfs(vertex)
 
 def main(x):
-			
+	
 	g = Graph()
+	
 	# print(str(len(g.vertices)))
 	#tesoro = chr(random.randrange(65,73))
 	tesoro = x
 	a = Vertex('A')
 	g.add_vertex(a)
 	text = ""
+
 	if tesoro == 'A':
-		text = ["Tesoro encontrado en A"]
-		text += g.print_graph()
+		#text = ["Tesoro encontrado en A"]
+		text = g.print_graph()
 		g.terminar = True
 		return text
 		#raise SystemExit
@@ -100,4 +102,6 @@ def main(x):
 		g.add_edge(edge[:1], edge[1:])
 		
 	b = g.dfs(a)
-	return g.print_graph
+	text = g.print_graph()
+
+	return text

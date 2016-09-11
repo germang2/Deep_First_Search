@@ -1,12 +1,15 @@
 <!DOCKTYPE html>
+{% load staticfiles %}
 <html>
 <head>
 	<title>DFS</title>
+	<link rel="stylesheet" href='{% static "grafo.png" %}'>
 </head>
 <body>
 	<h1>Busqueda en profundidad</h1>
 	<h2>DFS (Deep first search)</h2>
-	<form method = 'POST'>
+	<img src='{% static "grafo.png" %}'/>
+	<form method = 'POST' action = "">
 		 {% csrf_token %}
 		<table>
 			{{ form.as_table }}

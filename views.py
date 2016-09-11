@@ -3,16 +3,21 @@ from form import tesoro
 from dfs import main
 
 def home(request):
-	form = tesoro(request.POST or None)
 	text = ""
-	if form.is_valid():
-		data = form.cleaned_data
-		t = data.get('Tesoro')
-		#print t
-		text = main(t)
-		#print text
+	if request.POST:
+		form = tesoro(request.POST)
+		if form.is_valid():
+			data = form.cleaned_data
+			t = data.get('Tesoro')
+			#print t
+			text = main(t)
+	else:
+		form = tesoro()
+		text = ""
+
+	context = {}	
 	context = {
 		'form':form,
-		'text':text
+		'text':text,
 	}
 	return render(request,"inicio.html",context)
