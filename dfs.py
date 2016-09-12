@@ -1,5 +1,7 @@
 import random
 import string
+import os
+import sys
 
 class Vertex:
 	def __init__(self, n):
@@ -16,9 +18,11 @@ class Vertex:
 			self.neighbors.sort()
 
 class Graph:
-	vertices = {}
-	time = 0
-	terminar = False
+
+	def __init__(self):
+		self.vertices = {}
+		self.time = 0
+		self.terminar = False
 	
 	def add_vertex(self, vertex):
 		if isinstance(vertex, Vertex) and vertex.name not in self.vertices:
@@ -40,10 +44,13 @@ class Graph:
 			
 	def print_graph(self):
 		graf = []
+		t = ""
 		for key in sorted(list(self.vertices.keys())):
 			graf.append((key + str(self.vertices[key].neighbors) + "  " + str(self.vertices[key].discovery) + "/" + str(self.vertices[key].finish)))
+			if self.vertices[key].color == "yellow":
+				t = self.vertices[key].name
 		#print graf
-		return graf
+		return [graf,t]
 
 	def _dfs(self, vertex):
 		global time
@@ -71,18 +78,19 @@ class Graph:
 			time = 1
 			v = self._dfs(vertex)
 
-def main(x):
+def main():
 	
+
 	g = Graph()
 	
-	# print(str(len(g.vertices)))
-	#tesoro = chr(random.randrange(65,73))
-	tesoro = x
+	tesoro = chr(random.randrange(65,73))
+	#tesoro = x
 	a = Vertex('A')
 	g.add_vertex(a)
 	text = ""
 
 	if tesoro == 'A':
+		a.color ='yellow'
 		#text = ["Tesoro encontrado en A"]
 		text = g.print_graph()
 		g.terminar = True
@@ -90,7 +98,6 @@ def main(x):
 		#raise SystemExit
 	#g.add_vertex(Vertex('B'))
 
-	#print tesoro
 	for i in range(ord('A'), ord('K')):
 		v = Vertex(chr(i))
 		if chr(i) == tesoro: #agrega el tesoro al vertice
@@ -100,8 +107,9 @@ def main(x):
 	edges = ['AB', 'AE', 'BF', 'CG', 'DE', 'DH', 'EH', 'FG', 'FI', 'FJ', 'GJ', 'HI']
 	for edge in edges:
 		g.add_edge(edge[:1], edge[1:])
-		
 	b = g.dfs(a)
 	text = g.print_graph()
-
+	
 	return text
+	
+	

@@ -11,15 +11,15 @@
 	<img src='{% static "grafo.png" %}'/>
 	<form method = 'POST' action = "">
 		 {% csrf_token %}
-		<table>
-			{{ form.as_table }}
-		</table>
-		<input type="submit" value="Iniciar">
+		<input type="submit" value="Generar Tesoro">
 	</form>
 	<p>El algoritmo se detiene cuando encuentra el nodo con el tesoro</p>
 	<p>Ademas se muestra la informacion respecto a los nodos</p>
-	{% for t in text %}
-		<p>{{ t }}</p>
+	{% if t != '' %}
+		<h4>Tesoro encontrado en {{ t }}</h4>
+	{% endif %}
+	{% for k in text %}
+		<p>{{ k }}</p>
 	{% endfor %}
 </body>
 </html>
