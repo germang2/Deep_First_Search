@@ -6,6 +6,15 @@
 <body>
 	<h1>Ruta mas corta entre dos nodos</h1>
 	<img src='{% static "grafos/original.png" %}'/>
+	<br>
+	<br>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form }}
+		<br>
+		<input type="submit" value="Buscar ruta">
+	</form>
+	<img src='{{ ruta }}'/>
 
 </body>
 </html>
