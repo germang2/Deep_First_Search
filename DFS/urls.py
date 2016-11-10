@@ -17,10 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from views import home
 from rutacorta.views import rutacorta
+from SisExperto.views import ExpertoView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^rutacorta$', rutacorta, name='rutacorta'),
+    url(r'^SisExperto$', ExpertoView.as_view(), name='SisExperto'),
 
 ]

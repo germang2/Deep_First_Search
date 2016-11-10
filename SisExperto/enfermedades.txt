@@ -1,0 +1,29 @@
+['Tiene fiebre?',   
+    ['Tiene tos?',
+      ['Tiene fatiga?', 
+        ['Tiene escalofrio?', 
+          ['Tiene dolor en el pecho?', 
+            ['Neumonia'],
+            ['Gripe']
+          ], 
+          ['Resfriado Comun']
+        ],              
+        ['Tiene dificultad respiratoria?', 
+          ['Tiene opresion muscular?', 
+            ['Asma'],
+            ['Bronquitis']
+          ],
+          ['Influenza']
+        ],
+      ],
+      ['Tiene dolor de cabeza?', 
+        ['Tiene dolor de garganta',
+          ['Amigdalitis'],
+          ['Migrana']
+        ],
+        ['Malestar General']
+      ],
+    ],
+  ['Malestar General']
+]               
+

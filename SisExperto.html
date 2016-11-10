@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>Sistema Experto</title>
+</head>
+<body>
+	<h1>Sistema Experto sobre enfermedades</h1>
+	<br>
+	<form method="POST">
+		{% csrf_token %}
+		{{ pregunta }}
+		<br>
+		{{ form }}
+		<br>
+		<input type="submit" value="Aceptar">
+	</form>
+	<br>
+</body>
+</html>
