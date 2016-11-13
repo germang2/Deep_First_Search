@@ -20,10 +20,18 @@ class ExpertoView(FormView):
 			for e in lista_enfer:
 				text = str(e.enfermedad)
 				cantidad.append(text)
-		print cantidad
-		print cantidad.count('Neumonia')
+		print self.mayor(lista_enfer, cantidad)
 		#FALTA TERMINAR
 		#Falta comparar y encontrar la enfermedad que se repite mas veces
 
 		#el siguiente return es obligatorio
 		return super(ExpertoView, self).form_valid(form)
+
+	def mayor(self, enfermedad, cantidad):
+		m = -9999999
+		text = ""
+		for i in range(len(enfermedad)):
+			if cantidad.count(enfermedad[i]) > m:
+				text = enfermedad[i]
+				m = cantidad.count(enfermedad[i])
+		return str(text.enfermedad)

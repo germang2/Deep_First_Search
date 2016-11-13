@@ -1,19 +1,10 @@
 from django import forms
+from .models import Sintoma
 
-sintomas_choices = (
-	('Tos', 'Tos'),
-	('Opresion muscular', 'Opresion muscular'),
-	('Nauseas', 'Nauseas'),
-	('Molestia en el pecho', 'Molestia en el pecho'),
-	('Fiebre', 'Fiebre'),
-	('Fatiga', 'Fatiga'),
-	('Escalofrios', 'Escalofrios'),
-	('Dolor en el pecho', 'Dolor en el pecho'),
-	('Dolor de garganta', 'Dolor de garganta'),
-	('Dolor de cabeza', 'Dolor de cabeza'),
-	('Dificultad respiratoria', 'Dificultad respiratoria'),
-	('Congestion nasal', 'Congestion nasal'),
-)
+sintomas_query = Sintoma.objects.all() #consulta todos los sintomas para agregarlos a una lista
+sintomas_choices = []
+for s in sintomas_query:
+	sintomas_choices.append((s,s))
 
 class FormExpert(forms.Form):
 	Seleccione_sintomas = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
