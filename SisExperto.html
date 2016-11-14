@@ -5,6 +5,7 @@
 <body>
 	<h1>Sistema Experto sobre enfermedades</h1>
 	<br>
+	{% if form %}
 	<form method="POST">
 		{% csrf_token %}
 		{{ pregunta }}
@@ -13,6 +14,14 @@
 		<br>
 		<input type="submit" value="Aceptar">
 	</form>
+	{% endif%}
 	<br>
+	{% if enfermedad %}
+		<h3>Posiblemente tengas</h3>
+		<p>{{ enfermedad }}</p>
+		<form action={% url 'SisExperto' %}>
+			<input type="submit" value="Consultar de nuevo">
+		</form>
+	{% endif %}
 </body>
 </html>

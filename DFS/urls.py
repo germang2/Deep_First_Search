@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^rutacorta$', rutacorta, name='rutacorta'),
-    url(r'^SisExperto$', ExpertoView.as_view(), name='SisExperto'),
+    url(r'^SisExperto$', ExpertoView, name='SisExperto'),
 
 ]
