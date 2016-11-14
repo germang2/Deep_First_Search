@@ -5,6 +5,7 @@ from django.db import models
 # Create your models here.
 class Enfermedad(models.Model):
 	nombre = models.CharField(primary_key=True, max_length=20)
+	tratamiento = models.CharField(max_length=200, default="Consulta un medico")
 
 	def __unicode__(self):
 		return unicode(self.nombre) or u''

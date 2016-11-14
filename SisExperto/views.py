@@ -17,8 +17,12 @@ def ExpertoView(request):
 				text = str(e.enfermedad)
 				cantidad.append(text)
 		enfer = mayor_probabilidad(lista_enfer, cantidad)
+		objEnfermedad = Enfermedad.objects.filter(nombre=enfer)
+		e = objEnfermedad[0].nombre
+		tratamiento = objEnfermedad[0].tratamiento
 		context = {
-			'enfermedad': enfer,
+			'enfermedad': e,
+			'tratamiento': tratamiento,
 		}
 	return render(request, 'SisExperto.html', context)
 
@@ -33,6 +37,8 @@ def mayor_probabilidad(enfermedad, cantidad):
 			return str(text.enfermedad)
 		else:
 			return str(text)
+
+
 
 '''
 class ExpertoView(FormView):

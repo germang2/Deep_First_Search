@@ -19,6 +19,7 @@
 	{% if enfermedad %}
 		<h3>Posiblemente tengas</h3>
 		<p>{{ enfermedad }}</p>
+		<p>{{ tratamiento }}</p>
 		<form action={% url 'SisExperto' %}>
 			<input type="submit" value="Consultar de nuevo">
 		</form>
