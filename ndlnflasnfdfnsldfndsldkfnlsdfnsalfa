@@ -1,0 +1,16 @@
+[33mee9f363[m Ya muestra tratamiento de la enfermedad
+[33m4acebd6[m Realiza correctamente la consulta de la enfermedad y la muestra en el html
+[33mf938078[m El formulario de forma automatica busca todos los sintomas para mostrarlos al usuario, tambien se añade funcion que encuentra la enfermedad mas probable para los sintomas seleccionados
+[33m67695df[m Por fin un avance :3
+[33mcf1f645[m Funciona formulario de respuesta, pero solo muestra la primer pregunta
+[33m190f65b[m Se agrega algoritmo dijkstra
+[33m84d53c6[m Final de la ruta mas corta
+[33md4ec3d9[m Se agregan resultados de las busqueda de la ruta mas corta
+[33m0a19e0c[m se agrega la ruta mas corta
+[33m0a0c1e8[m Prueba5
+[33mc02f9d7[m Prueba4
+[33me07f2f3[m Prueba3
+[33m794a214[m Prueba2
+[33mc7b948f[m Merge branch 'master' of https://github.com/germang2/Deep_First_Search
+[33m2bafad2[m Initial commit
+[33meba73a4[m Prueba1
