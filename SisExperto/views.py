@@ -11,8 +11,12 @@ def ExpertoView(request):
 	if form.is_valid():
 		selecciones = form.cleaned_data['Seleccione_sintomas'] #guarda los sintomas seleccionados por el usuario
 		cantidad = []
+		lista_enfer = []
 		for s in selecciones:
-			lista_enfer = SintomaEnfermedad.objects.filter(sintoma=s)
+			query_sintoma = SintomaEnfermedad.objects.filter(sintoma=s) #Busca las enfermedades relacionadas al sitoma
+			for q in query_sintoma:
+				if not (q in lista_enfer):
+					lista_enfer.append(q)
 			for e in lista_enfer:
 				text = str(e.enfermedad)
 				cantidad.append(text)
