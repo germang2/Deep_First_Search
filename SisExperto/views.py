@@ -18,8 +18,9 @@ def ExpertoView(request):
 				cantidad.append(text)
 		enfer = mayor_probabilidad(lista_enfer, cantidad)
 		objEnfermedad = Enfermedad.objects.filter(nombre=enfer)
-		e = objEnfermedad[0].nombre
-		tratamiento = objEnfermedad[0].tratamiento
+		if len(objEnfermedad) > 0:
+		    e = objEnfermedad[0].nombre
+    		tratamiento = objEnfermedad[0].tratamiento
 		context = {
 			'enfermedad': e,
 			'tratamiento': tratamiento,
@@ -49,7 +50,7 @@ class ExpertoView(FormView):
 	def __init__(self):
 		self.text = ""
 		self.cantidad = []
-		self.lista_enfer = []	
+		self.lista_enfer = []
 
 	def form_valid(self, form):
 		#This method is calle when valid for data has been POSTED
